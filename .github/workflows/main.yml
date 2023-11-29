@@ -36,16 +36,6 @@ jobs:
         run: |
           ./mvnw clean install -DskipTests
 
-      - name: Set up Docker
-        uses: docker/setup-docker@v2
-        with:
-          container-name: docker
-          include-registry: true
-
-      - name: Build Docker Image
-        run: |
-          docker build -t springboot-backend .
-
       - name: Configure AWS credentials from AWS account
         uses: aws-actions/configure-aws-credentials@v1
         with:
