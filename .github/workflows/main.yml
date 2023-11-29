@@ -32,6 +32,9 @@ jobs:
           distribution: 'adopt'
           java-version: '17'
 
+      - name: Set execute permissions for mvnw
+        run: chmod +x mvnw
+        
       - name: Build Spring Boot Application
         run: |
           ./mvnw clean install -DskipTests
