@@ -16,7 +16,15 @@
             "essential": true,
             "environment": [],
             "mountPoints": [],
-            "volumesFrom": []
+            "volumesFrom": [],
+            "log_configuration": {
+                "log_driver": "awslogs",
+                "options": {
+                  "awslogs-group": "/ecs/my-application",
+                  "awslogs-region": "us-east-1",  
+                  "awslogs-stream-prefix": "my-application"
+                }
+            }
         }
     ],
     "family": "app",
