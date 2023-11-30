@@ -25,7 +25,7 @@ resource "aws_ecs_task_definition" "td" {
     {
       name         = "app"
       image        = "056212709895.dkr.ecr.us-east-1.amazonaws.com/app_repo"
-      cpu          = 512
+      cpu          = 256
       memory       = 512
       essential    = true
       portMappings = [
@@ -39,7 +39,7 @@ resource "aws_ecs_task_definition" "td" {
   family                   = "app"
   requires_compatibilities = ["FARGATE"]
 
-  cpu                = "512"
+  cpu                = "256"
   memory             = "512"
   network_mode       = "awsvpc"
   task_role_arn      = "arn:aws:iam::056212709895:role/ecsTaskExecutionRole"
