@@ -133,6 +133,7 @@ jobs:
         uses: aws-actions/amazon-ecr-login@v1
 
       - name: Build, tag, and push image to Amazon ECR
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         id: build-image
         env:
           ECR_REGISTRY: "056212709895.dkr.ecr.us-east-1.amazonaws.com"
