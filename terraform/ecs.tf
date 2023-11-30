@@ -45,3 +45,7 @@ resource "aws_ecs_task_definition" "td" {
   task_role_arn      = "arn:aws:iam::056212709895:role/ecsTaskExecutionRole"
   execution_role_arn = "arn:aws:iam::056212709895:role/ecsTaskExecutionRole"
 }
+
+resource "aws_cloudwatch_log_group" "my_log_group" {
+  name = "/ecs/my-application"
+}
