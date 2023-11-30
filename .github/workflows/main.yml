@@ -145,6 +145,7 @@ jobs:
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
       - name: Fill in the new image ID in the Amazon ECS task definition
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         id: task-def-1
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
@@ -153,6 +154,7 @@ jobs:
           image: ${{ steps.build-image.outputs.image }}
 
       - name: Deploy Amazon ECS task definition
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ${{ steps.task-def-1.outputs.task-definition }}
