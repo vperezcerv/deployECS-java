@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+@CrossOrigin(origins = "http://deploy-s3-app-angular-vapc-1098824939.s3-website-us-east-1.amazonaws.com/", maxAge = 3600)
 @RestController
 public class ApiController {
 
