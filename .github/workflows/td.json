@@ -17,7 +17,7 @@
             "environment": [],
             "mountPoints": [],
             "volumesFrom": [],
-            "log_configuration": {
+            "logConfiguration": {
                 "log_driver": "awslogs",
                 "options": {
                   "awslogs-group": "/ecs/my-application",
